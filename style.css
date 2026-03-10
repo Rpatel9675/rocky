@@ -1230,10 +1230,33 @@ img {
 /* =========================================
    Responsive Design
 ========================================= */
+@media screen and (max-width: 1024px) {
+    .projects-grid, .blogs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 @media screen and (max-width: 992px) {
-    .hero-container, .about-container, .edu-cert-container, .contact-container {
+    .hero-container, .about-container {
         flex-direction: column;
+        text-align: center;
+    }
+    
+    .edu-cert-container, .contact-container {
         grid-template-columns: 1fr;
+    }
+    
+    .hero-image-wrapper {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-buttons, .social-links {
+        justify-content: center;
+    }
+    
+    .about-info {
+        text-align: left;
     }
     
     .blob-shape {
@@ -1243,6 +1266,12 @@ img {
     
     .experience-badge {
         right: 10px;
+        bottom: 10px;
+        padding: 1rem;
+    }
+    
+    .experience-badge .years {
+        font-size: 2rem;
     }
     
     .footer-container {
@@ -1274,7 +1303,7 @@ img {
     }
     
     .main-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
     
     .cursor, .cursor-follower {
@@ -1296,19 +1325,41 @@ img {
     .timeline-item {
         padding-left: 40px;
     }
+    
+    .projects-grid, .blogs-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 576px) {
     .section {
-        padding: 5rem 5%;
+        padding: 4rem 5%;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .typing-text {
+        font-size: 1.2rem;
     }
     
     .footer-container {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .blob-shape {
         width: 250px;
         height: 250px;
+    }
+    
+    .contact-form {
+        padding: 2rem 1.5rem;
     }
 }
